@@ -35,3 +35,13 @@ function v = sort3(a, b, c)
         v = [v(1) c v(2)];  % in the middle
     end
 end
+
+
+% Solution 03:
+
+function v = sort3 (a,b,c)
+    v = [a b c];                                % unordered
+    v = [min(v(1),v(3)) v(2) max(v(1),v(3))];   % the 1st and 3rd are in order
+    v = [min(v(1),v(2)) max(v(1),v(2)) v(3)];   % move 2nd left if necessary
+    v = [v(1) min(v(2),v(3)) max(v(2),v(3))];   % move 2nd right if necessary
+end
